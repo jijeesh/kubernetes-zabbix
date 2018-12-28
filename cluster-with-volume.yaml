@@ -4,20 +4,16 @@ kind: Cluster
 metadata:
   name: mysql
 spec:
-  members: 1
+  members: 3
   rootPasswordSecret:
     name: mysql-root-user-secret
-  volumeMounts:
-        - name: zabbix-cluster-db-storage
-          mountPath: /var/lib/mysql
-          subPath: zabbix-cluster-db
+  volumeClaimTemplate:
+    metadata:
+      name: data
     spec:
-      volumes:
-      - name: zabbix-cluster-db-storage
-        flexVolume:
-         driver: ceph.rook.io/rook
-         fsType: ceph
-         options:
-           fsName: myfs-ec
-           clusterNamespace: rook-ceph
-           path: /
+      storageClassName: rook-ceph-block
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 1Gi
