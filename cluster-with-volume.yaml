@@ -1,0 +1,23 @@
+---
+apiVersion: mysql.oracle.com/v1alpha1
+kind: Cluster
+metadata:
+  name: mysql
+spec:
+  members: 1
+  rootPasswordSecret:
+    name: mysql-root-user-secret
+  volumeMounts:
+        - name: zabbix-cluster-db-storage
+          mountPath: /var/lib/mysql
+          subPath: zabbix-cluster-db
+    spec:
+      volumes:
+      - name: zabbix-cluster-db-storage
+        flexVolume:
+         driver: ceph.rook.io/rook
+         fsType: ceph
+         options:
+           fsName: myfs-ec
+           clusterNamespace: rook-ceph
+           path: /
