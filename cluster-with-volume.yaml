@@ -7,13 +7,13 @@ spec:
   members: 3
   rootPasswordSecret:
     name: mysql-root-user-secret
-  volumeClaimTemplate:
-    metadata:
+  volumeClaimTemplates:
+  - metadata:
       name: data
     spec:
-      storageClassName: rook-ceph-block
       accessModes:
-        - ReadWriteMany
+      - ReadWriteOnce
       resources:
         requests:
-          storage: 1Gi
+          storage: 5Gi
+      storageClassName: rook-ceph-block
