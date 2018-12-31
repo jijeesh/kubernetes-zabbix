@@ -1,7 +1,7 @@
 rbac:
   enabled: false
 operator:
-  namespace: mysql-operator
+  namespace: zabbix
   global: true
   register_crd: true
 image:
