@@ -1,7 +1,7 @@
 rbac:
   enabled: false
 operator:
-  namespace: mysql-operator
+  namespace: mysql-operator2
   global: false
   register_crd: true
 image:
