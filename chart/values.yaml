@@ -1,8 +1,8 @@
 rbac:
-  enabled: true
+  enabled: false
 operator:
   namespace: mysql-operator
-  global: true
+  global: false
   register_crd: true
 image:
   registry: iad.ocir.io/oracle
