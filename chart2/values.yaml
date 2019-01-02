@@ -1,8 +1,8 @@
 rbac:
-  enabled: true
+  enabled: false
 operator:
   global: true
-#  namespace: default
+  namespace: mysql-operator
   register_crd: true
 image:
   tag: 0.2.0
