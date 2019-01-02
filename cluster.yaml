@@ -3,3 +3,5 @@ kind: Cluster
 metadata:
   name: mysql
   namespace: zabbix
+spec:
+  members: 3
