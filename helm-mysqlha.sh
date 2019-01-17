@@ -1,2 +1,3 @@
 #helm install --namespace zabbix --name zabbix-db incubator/mysqlha --set persistence.storageClass=rook-ceph-block --set mysqlUser=zabbix --set mysqlPassword=zabbix123 --set mysqlDatabase=zabbixtest
-helm install --namespace zabbix --name zabbix-db incubator/mysqlha --set persistence.storageClass=rook-ceph-block --set mysqlha.mysqlUser=zabbix --set mysqlha.mysqlPassword=zabbix123 --set mysqlha.mysqlDatabase=zabbixtest
+# helm install --namespace zabbix --name zabbix-db incubator/mysqlha --set persistence.storageClass=rook-ceph-block --set mysqlha.mysqlUser=zabbix --set mysqlha.mysqlPassword=zabbix123 --set mysqlha.mysqlDatabase=zabbixtest
+helm install --namespace zabbix --name zabbix-db incubator/mysqlha --set mysqlImage=monitoringartist/zabbix-db-mariadb --set persistence.storageClass=rook-ceph-block --set mysqlha.mysqlUser=zabbix --set mysqlha.mysqlPassword=zabbix123 --set mysqlha.mysqlDatabase=zabbix
