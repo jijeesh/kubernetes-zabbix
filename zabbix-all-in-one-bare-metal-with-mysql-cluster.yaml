@@ -65,14 +65,11 @@ spec:
           - containerPort: 80
           env:
           - name: ZS_DBUser
-            value: root
+            value: zabbix
           - name: ZS_DBPassword
-            valueFrom:
-            secretKeyRef:
-              name: zabbix-mysql-root-password
-              key: password
+            value: zabbix123
           - name: ZS_DBHost
-            value: mysql-zabbix
+            value: zabbix-db-mysqlha
           - name: ZW_ZBX_SERVER
             value: zabbix-server
           - name: ZS_enabled
@@ -109,14 +106,11 @@ spec:
             name: zabbix-jmx
           env:
           - name: ZS_DBUser
-            value: root
+            value: zabbix
           - name: ZS_DBPassword
-            valueFrom:
-            secretKeyRef:
-              name: zabbix-mysql-root-password
-              key: password
+            value: zabbix123
           - name: ZS_DBHost
-            value: mysql-zabbix
+            value: zabbix-db-mysqlha
           - name: ZS_enabled
             value: "true"
           - name: ZA_enabled
