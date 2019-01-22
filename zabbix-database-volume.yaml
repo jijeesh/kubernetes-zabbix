@@ -7,7 +7,9 @@ data:
   my.cnf: |-
     [mysqld]
     default_authentication_plugin=mysql_native_password
-    # max_allowed_packet=64M
+    max_allowed_packet=1000000000
+    net_buffer_length=1000000
+    read_only= 0
     # query_cache_size=0
     # query_cache_type=0
     # sync_binlog=0
