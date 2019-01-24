@@ -12,16 +12,16 @@ data:
     read_only= 0
     super_read_only= 0
     innodb_lock_wait_timeout=500
-    # query_cache_size=0
-    # query_cache_type=0
-    # sync_binlog=0
-    # innodb_buffer_pool_size=768M
-    # innodb_log_file_size=128M
-    # innodb_flush_method=O_DIRECT
-    # innodb_old_blocks_time=1000
-    # innodb_flush_log_at_trx_commit=0
-    # open_files_limit=4096
-    # max_connections=300
+    query_cache_size=0
+    query_cache_type=0
+    sync_binlog=0
+    innodb_buffer_pool_size=805306368
+    innodb_log_file_size=805306368
+    innodb_flush_method=O_DIRECT
+    innodb_old_blocks_time=1000
+    innodb_flush_log_at_trx_commit=0
+    open_files_limit=4096
+    max_connections=300
 ---
 apiVersion: v1
 kind: Secret
