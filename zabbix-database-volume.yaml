@@ -12,8 +12,8 @@ data:
     read_only= 0
     super_read_only= 0
     innodb_lock_wait_timeout=500
-    query_cache_size=0
-    query_cache_type=0
+    #query_cache_size=0 # removed in mysql 8
+    #query_cache_type=0 # removed in mysql 8
     sync_binlog=0
     innodb_buffer_pool_size=805306368
     innodb_log_file_size=805306368
